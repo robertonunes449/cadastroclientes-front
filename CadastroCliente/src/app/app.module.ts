@@ -10,6 +10,10 @@ import { HeadComponent } from './Templates/head/head.component';
 import { NavComponent } from './Templates/nav/nav.component';
 import { FooterComponent } from './Templates/footer/footer.component';
 import { MenuComponent } from './Views/menu/menu.component';
+import { ColaboradorReadComponent } from './Components/Colaborador/colaborador-read/colaborador-read.component';
+import { ColaboradorAddComponent } from './Components/Colaborador/colaborador-add/colaborador-add.component';
+import { ColaboradorUpdateComponent } from './Components/Colaborador/colaborador-update/colaborador-update.component';
+import { ColaboradorDeleteComponent } from './Components/Colaborador/colaborador-delete/colaborador-delete.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +21,11 @@ import { MenuComponent } from './Views/menu/menu.component';
     HeadComponent,
     NavComponent,
     FooterComponent,
-    MenuComponent
+    MenuComponent,
+    ColaboradorReadComponent,
+    ColaboradorAddComponent,
+    ColaboradorUpdateComponent,
+    ColaboradorDeleteComponent
   ],
   imports: [
     BrowserModule,
