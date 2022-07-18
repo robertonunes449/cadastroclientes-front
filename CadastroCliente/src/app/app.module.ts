@@ -14,6 +14,7 @@ import { ColaboradorReadComponent } from './Components/Colaborador/colaborador-r
 import { ColaboradorAddComponent } from './Components/Colaborador/colaborador-add/colaborador-add.component';
 import { ColaboradorUpdateComponent } from './Components/Colaborador/colaborador-update/colaborador-update.component';
 import { ColaboradorDeleteComponent } from './Components/Colaborador/colaborador-delete/colaborador-delete.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { ColaboradorDeleteComponent } from './Components/Colaborador/colaborador
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    NgxMaskModule.forRoot()
+    NgxMaskModule.forRoot(),
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
