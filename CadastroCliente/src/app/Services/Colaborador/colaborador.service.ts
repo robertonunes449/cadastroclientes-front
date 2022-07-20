@@ -19,4 +19,9 @@ export class ColaboradorService {
     const url = `${this.baseUrl}/colaborador`
     return this.http.get<Colaborador[]>(url);
   }
+
+  create(colaborador: Colaborador): Observable<Colaborador> {
+    const url = `${this.baseUrl}/colaborador`
+    return this.http.post<Colaborador>(url, colaborador);
+  }
 }

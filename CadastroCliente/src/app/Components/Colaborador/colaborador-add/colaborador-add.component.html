@@ -1,6 +1,6 @@
 <mat-card>
     <mat-card-title fxLayout="row" fxLayoutAlign="space-around center">
-        Cadastrar novo Colaborador
+       <h1>Cadastrar novo Colaborador</h1> 
     </mat-card-title>
     <mat-card-subtitle></mat-card-subtitle>
     <mat-card-content fxLayoutAlign="space-around center">
@@ -75,7 +75,7 @@
            
               <div mat-dialog-action [align]="'end'" fxLayoutGap="20px">
                 <button mat-raised-button color="warn" mat-dialog-close>Close</button>
-                <button mat-raised-button color="primary" type="submit" [disabled]="!colaboradoresForm.valid"> Criar </button>
+                <button mat-raised-button color="primary" (click)="create" [disabled]="!colaboradoresForm.valid"> Criar </button>
               </div>
             
         </form>
