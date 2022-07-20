@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { MatDialog, MatPaginator, MatSnackBar, MatSort, MatTableDataSource } from '@angular/material';
+import { Router } from '@angular/router';
 import { Colaborador } from 'src/app/Models/Colaborador/Colaborador';
 import { ColaboradorService } from 'src/app/Services/Colaborador/colaborador.service';
 
@@ -24,7 +25,8 @@ export class ColaboradorReadComponent implements OnInit {
     private colService: ColaboradorService,
     private dialog: MatDialog, 
     private snackBar: MatSnackBar,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -40,6 +42,10 @@ export class ColaboradorReadComponent implements OnInit {
       console.log(resposta);
       //this.colaboradores = resposta;
     })
+  }
+
+  addColaborador(){
+    this.router.navigate(["colaboradores/add"]);
   }
 
   applyFilter(filterValue: string) {

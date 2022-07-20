@@ -1,1 +1,83 @@
-<p>colaborador-add works!</p>
+<mat-card>
+    <mat-card-title fxLayout="row" fxLayoutAlign="space-around center">
+        Cadastrar novo Colaborador
+    </mat-card-title>
+    <mat-card-subtitle></mat-card-subtitle>
+    <mat-card-content fxLayoutAlign="space-around center">
+        <form [formGroup]="colaboradoresForm" (ngSubmit)="onSubmit()" fxLayout="column" fxLayoutAlign="start stretch" #f method="get" action=".">
+            <div fxFlex="100"  fxLayout="column" fxLayoutAlign="space-between  begin">
+              <mat-form-field fxFlex="45" >  
+                <input matInput type="text" placeholder="Nome" id="nome" Name="nome" formControlName="nome" #nome>
+              </mat-form-field> 
+              <mat-form-field fxFlex="45">
+                <input matInput type="text" placeholder="Email" id="email" Name="email" formControlName="email" >
+              </mat-form-field>
+            <div fxFlex="100"  fxLayout="row" fxLayoutAlign="space-between  begin">
+                <mat-form-field fxFlex="45">
+                    <input matInput type="text" placeholder="Função" id="funcao" Name="funcao" formControlName="funcao" >
+                </mat-form-field>
+                <mat-form-field fxFlex="25">
+                    <input matInput  type="date"  id="nascimento" placeholder="Data de Nascimento" formControlName="nascimento" name="nascimento">            
+                </mat-form-field>
+            </div>
+               
+            </div>
+            <div fxFlex="100" fxLayoutAlign="begin">
+                <h4>Endereço:</h4>
+            </div>          
+            <div fxFlex="100" fxLayout="row" fxLayoutAlign="space-between begin" fxLayoutGap="20px">
+              <mat-form-field fxFlex="50" >  
+                <input matInput type="text" placeholder="Endereço" id="logradouro" Name="logradouro" formControlName="logradouro">
+              </mat-form-field> 
+              <mat-form-field fxFlex="20">
+                <input matInput type="text" placeholder="Número" id="numero" Name="numero" formControlName="numero">
+              </mat-form-field>
+              <mat-form-field fxFlex="30">
+                  <input matInput type="text" placeholder="Complemento" id="complemento" Name="complemento" formControlName="complemento">
+                </mat-form-field>            
+            </div>
+            <div fxFlex="100" fxLayout="row" fxLayoutAlign="space-between begin" fxLayoutGap="20px">
+                <mat-form-field fxFlex="30" >  
+                  <input matInput type="text" placeholder="CEP" id="cep" Name="cep" formControlName="cep" mask="00000-000" 
+                  onblur="pesquisacep(this.value);">
+                </mat-form-field> 
+                <mat-form-field fxFlex="30">
+                  <input matInput type="text" placeholder="Bairro" id="bairro" Name="bairro" formControlName="bairro">
+                </mat-form-field>
+                <mat-form-field fxFlex="30">
+                  <input matInput type="text" placeholder="Cidade" id="cidade" Name="cidade" formControlName="cidade">
+                </mat-form-field>
+                <mat-form-field fxFlex="10">
+                    <input matInput type="text" placeholder="UF" id="uf" Name="uf" formControlName="uf">
+                  </mat-form-field>            
+              </div>
+    
+            <div fxFlex="100" fxLayoutAlign="begin">
+              <h4>Telefone: </h4>
+            </div> 
+    
+            <div fxFlex="100"  fxLayout="row wrap" fxLayoutAlign="start start" fxLayoutGap="20px">
+              <mat-form-field fxFlex="30">  
+                <input matInput type="text" placeholder="Telefone" id="telefone" Name="telefone" formControlName="telefone" mask="(00) 0000-0000" >
+              </mat-form-field>
+            </div>     
+    
+            <div fxFlex="100" fxLayoutAlign="begin">
+                <h4>Celular: </h4>
+              </div> 
+      
+              <div fxFlex="100"  fxLayout="row wrap" fxLayoutAlign="start start" fxLayoutGap="20px">
+                <mat-form-field fxFlex="30">  
+                  <input matInput type="text" placeholder="Celular" id="celular" Name="celular" formControlName="celular" mask="(00) 00000-0000" >
+                </mat-form-field>
+              </div>     
+    
+           
+              <div mat-dialog-action [align]="'end'" fxLayoutGap="20px">
+                <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+                <button mat-raised-button color="primary" type="submit" [disabled]="!colaboradoresForm.valid"> Criar </button>
+              </div>
+            
+        </form>
+    </mat-card-content>
+</mat-card>
