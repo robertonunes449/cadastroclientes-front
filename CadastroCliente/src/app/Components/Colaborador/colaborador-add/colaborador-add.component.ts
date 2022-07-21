@@ -52,10 +52,14 @@ export class ColaboradorAddComponent implements OnInit {
         this.colService.message('Colaborador Criado com Sucesso');
         console.log(resposta)
       }, err => {
-        for (let i = 0; i < err,error,errors.length; i++) {
-            this.colService.message(err,error,errors[i].message)    
+        for(let i=0; i< err.error.errors.lenght; i++) {
+          this.colService.message(err.error.errors[i].message)
         }
       })
+  }
+
+  cancel() {
+    this.router.navigate(['colaboradores']);
   }
 
 }
