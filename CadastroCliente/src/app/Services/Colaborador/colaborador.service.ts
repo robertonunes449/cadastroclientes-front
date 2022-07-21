@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Colaborador } from 'src/app/Models/Colaborador/Colaborador';
+import { MatSnackBar } from '@angular/material';
+import { ok } from 'assert';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +15,7 @@ export class ColaboradorService {
 
   constructor(
     private http: HttpClient,
+    private snackBar: MatSnackBar
   ) { }
 
   findAll():Observable<Colaborador[]> {
@@ -23,5 +26,11 @@ export class ColaboradorService {
   create(colaborador: Colaborador): Observable<Colaborador> {
     const url = `${this.baseUrl}/colaborador`
     return this.http.post<Colaborador>(url, colaborador);
+  }
+
+  message(s: String): void {
+    this.snackBar.open(`${s}`, "ok", {
+      duration:2000
+    })
   }
 }

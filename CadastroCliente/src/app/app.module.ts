@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +15,19 @@ import { ColaboradorAddComponent } from './Components/Colaborador/colaborador-ad
 import { ColaboradorUpdateComponent } from './Components/Colaborador/colaborador-update/colaborador-update.component';
 import { ColaboradorDeleteComponent } from './Components/Colaborador/colaborador-delete/colaborador-delete.component';
 import { HttpClientModule } from '@angular/common/http';
+
+/* Importando a configuração de algumas linguagens */
+import { registerLocaleData } from '@angular/common';
+import localept from '@angular/common/locales/pt';
+import localeES from '@angular/common/locales/es';
+import localeDE from '@angular/common/locales/de';
+import localeFR from '@angular/common/locales/fr';
+registerLocaleData(localept);
+registerLocaleData(localeES);
+registerLocaleData(localeDE);
+registerLocaleData(localeFR);
+/* *********************************************** */
+
 
 @NgModule({
   declarations: [
@@ -36,7 +49,9 @@ import { HttpClientModule } from '@angular/common/http';
     NgxMaskModule.forRoot(),
     HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    { provide: LOCALE_ID, useValue: 'pt-br' }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

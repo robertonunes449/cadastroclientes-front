@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material';
+import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 import { Colaborador } from 'src/app/Models/Colaborador/Colaborador';
 import { ColaboradorService } from 'src/app/Services/Colaborador/colaborador.service';
 
@@ -9,33 +13,48 @@ import { ColaboradorService } from 'src/app/Services/Colaborador/colaborador.ser
 })
 export class ColaboradorAddComponent implements OnInit {
 
-  colaboradores: Colaborador =  {
-    nome: '',
-    email: '',
-    nascimento: new Date,
-    funcao: '',
-    logradouro: '',
-    numero: '',
-    complemento: '',
-    cep: '',
-    bairro: '',
-    cidade: '',
-    telefone: '',
-    celular: '',
-    uf: ''
-  }
+  colaboradores$: Observable<Colaborador[]>;
+
+  colaboradoresForm: FormGroup = this.fb.group ({
+   
+    nome: ['', [Validators.required]],
+    email: ['',],
+    nascimento: [new Date()],
+    funcao: ['',],
+    logradouro: ['',],
+    numero: ['',],
+    complemento: ['',],
+    cep: ['',],
+    bairro: ['',],
+    cidade: ['',],
+    telefone: ['',],
+    celular: ['',],
+    uf: ['',],
+    
+    
+  }); 
 
   constructor(
-    private colService: ColaboradorService
+    private colService: ColaboradorService,
+    private fb: FormBuilder,
+    private snackBar: MatSnackBar,
+    private router: Router
   ) { }
 
   ngOnInit() {
   }
 
   create(): void {
-    this.colService.create(this.colaboradores)
+    let c: Colaborador = this.colaboradoresForm.value;
+    this.colService.create(c)
       .subscribe((resposta) => {
+        this.router.navigate(['colaboradores']);
+        this.colService.message('Colaborador Criado com Sucesso');
         console.log(resposta)
+      }, err => {
+        for (let i = 0; i < err,error,errors.length; i++) {
+            this.colService.message(err,error,errors[i].message)    
+        }
       })
   }
 
