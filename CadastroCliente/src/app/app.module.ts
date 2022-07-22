@@ -22,6 +22,10 @@ import localept from '@angular/common/locales/pt';
 import localeES from '@angular/common/locales/es';
 import localeDE from '@angular/common/locales/de';
 import localeFR from '@angular/common/locales/fr';
+import { ClienteReadComponent } from './Components/Cliente/cliente-read/cliente-read.component';
+import { ClienteAddComponent } from './Components/Cliente/cliente-add/cliente-add.component';
+import { ClienteDeleteComponent } from './Components/Cliente/cliente-delete/cliente-delete.component';
+import { ClienteUpdateComponent } from './Components/Cliente/cliente-update/cliente-update.component';
 registerLocaleData(localept);
 registerLocaleData(localeES);
 registerLocaleData(localeDE);
@@ -39,7 +43,11 @@ registerLocaleData(localeFR);
     ColaboradorReadComponent,
     ColaboradorAddComponent,
     ColaboradorUpdateComponent,
-    ColaboradorDeleteComponent
+    ColaboradorDeleteComponent,
+    ClienteReadComponent,
+    ClienteAddComponent,
+    ClienteDeleteComponent,
+    ClienteUpdateComponent
   ],
   imports: [
     BrowserModule,
