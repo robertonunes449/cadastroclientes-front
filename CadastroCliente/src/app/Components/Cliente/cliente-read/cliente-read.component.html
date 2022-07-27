@@ -1,1 +1,32 @@
 <p>cliente-read works!</p>
+<div class="content">
+  <mat-card class="mat-elevation-z8">
+    <div class="title" fxLayoutAlign="center center">
+      <h1>Colaboradores</h1>
+    </div>
+  </mat-card>
+  
+  <mat-card>
+    <div class="mat-elevation-z8 content-table" >
+      <table class="table" mat-table [dataSource]="dataSource"  fxLayoutAlign="center center">
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="nome" >
+          <th mat-header-cell *matHeaderCellDef></th>
+          <td mat-cell *matCellDef="let row">
+            <a mat-raised-button routerLink="{{ row.id }}/cliente">
+              <mat-icon >person</mat-icon>
+              <br>
+              <span>
+                {{ row.id }}→  &nbsp; {{ row.nome }}
+              </span>
+            </a>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+    </div>
+  </mat-card> 
+</div>

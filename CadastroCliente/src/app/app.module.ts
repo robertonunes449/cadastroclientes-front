@@ -26,6 +26,7 @@ import { ClienteReadComponent } from './Components/Cliente/cliente-read/cliente-
 import { ClienteAddComponent } from './Components/Cliente/cliente-add/cliente-add.component';
 import { ClienteDeleteComponent } from './Components/Cliente/cliente-delete/cliente-delete.component';
 import { ClienteUpdateComponent } from './Components/Cliente/cliente-update/cliente-update.component';
+import { ClienteReadAllComponent } from './components/cliente/cliente-read-all/cliente-read-all.component';
 registerLocaleData(localept);
 registerLocaleData(localeES);
 registerLocaleData(localeDE);
@@ -47,7 +48,8 @@ registerLocaleData(localeFR);
     ClienteReadComponent,
     ClienteAddComponent,
     ClienteDeleteComponent,
-    ClienteUpdateComponent
+    ClienteUpdateComponent,
+    ClienteReadAllComponent
   ],
   imports: [
     BrowserModule,
