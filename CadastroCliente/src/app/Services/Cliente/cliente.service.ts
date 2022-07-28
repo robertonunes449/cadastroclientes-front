@@ -44,11 +44,7 @@ export class ClienteService {
   }
 
   mensage(str: String): void {
-    this._snack.open(`${str}`, 'OK', {
-      horizontalPosition: 'end',
-      verticalPosition: 'top',
-      duration: 3000
-    })
+    this._snack.open(`${str}`, 'OK', {duration: 3000 })
   }
 }
 

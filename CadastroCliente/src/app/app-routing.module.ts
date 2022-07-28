@@ -26,8 +26,8 @@ const routes: Routes = [
   {path: "clientes/:id_col/cliente", component: ClienteReadAllComponent},
   {path: "clientes", component: ClienteReadComponent},
   {path: "clientes/:id_col/cliente/create", component:ClienteAddComponent},
-  {path: "clientes/:id_col/cliente/delete", component:ClienteDeleteComponent},
-  {path: "clientes/:id_col/cliente/update", component:ClienteUpdateComponent},
+  {path: "clientes/:id_col/cliente/:id/delete", component:ClienteDeleteComponent},
+  {path: "clientes/:id_col/cliente/:id/update", component:ClienteUpdateComponent},
 
 ];
 
